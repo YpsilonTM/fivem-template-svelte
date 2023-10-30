@@ -40,14 +40,14 @@ const NUIEvent = (actionName: string, handler: (data: any) => void) => {
  * @param keys - An array of strings representing the keys to listen for. Find the key names here: https://developer.mozilla.org/en-US/docs/Web/API/UI_Events/Keyboard_event_key_values
  * @param handler - A function to be called when the specified keys are pressed.
  */
-const RegisterKeyMapping = (keys: string[], handler: () => void) => {
+const RegisterKeyMapping = (keys: string[], handler: (event: KeyboardEvent) => void) => {
   const keylistener = (event: KeyboardEvent) => {
     if (keys.includes(event.key)) {
-      handler()
+      handler(event)
     }
   }
-  onMount(() => window.addEventListener('keypress', keylistener))
-  onDestroy(() => window.removeEventListener('keypress', keylistener))
+  onMount(() => window.addEventListener('keydown', keylistener))
+  onDestroy(() => window.removeEventListener('keydown', keylistener))
 }
 
 export { NUIEvent, NUIRequest, RegisterKeyMapping }
