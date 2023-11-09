@@ -3,6 +3,8 @@ import { onDestroy, onMount } from 'svelte'
 
 const resourceName = (window as any).GetParentResourceName ? (window as any).GetParentResourceName() : 'nui-frame-app'
 
+const dev = process.env.NODE_ENV === 'development'
+
 /**
  * Sends a request to the fivem client with the specified event name and data.
  * @param eventname - The name of the event to send the request to.
@@ -50,4 +52,4 @@ const RegisterKeyMapping = (keys: string[], handler: (event: KeyboardEvent) => v
   onDestroy(() => window.removeEventListener('keydown', keylistener))
 }
 
-export { NUIEvent, NUIRequest, RegisterKeyMapping }
+export { NUIEvent, NUIRequest, RegisterKeyMapping, dev }
