@@ -2,5 +2,8 @@
   "printWidth": 200,
   "semi": false,
   "singleQuote": true,
-  "bracketSameLine": true
+  "bracketSameLine": true,
+  "useTabs": true,
+  "tabWidth": 2,
+  "trailingComma": "all"
 }
