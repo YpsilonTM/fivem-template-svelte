@@ -1,7 +1,11 @@
 local QBCore = exports['qb-core']:GetCoreObject()
 
-RegisterNUICallback('example', function(payload, cb)
-    QBCore.Functions.TriggerCallback(GetCurrentResourceName() .. ':example', function(result)
-        cb(result)
-    end, payload)
-end)
+function PassToServer(name)
+    RegisterNUICallback(name, function(payload, cb)
+        QBCore.Functions.TriggerCallback(GetCurrentResourceName() .. ':' .. name, function(result)
+            cb(result)
+        end, payload)
+    end)
+end
+
+PassToServer('Example')
