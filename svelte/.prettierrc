@@ -3,8 +3,7 @@
 	"semi": false,
 	"singleQuote": true,
 	"bracketSameLine": true,
-	"useTabs": true,
-	"tabWidth": 4,
+	"tabWidth": 2,
 	"trailingComma": "all",
 	"plugins": ["prettier-plugin-svelte"],
 	"overrides": [{ "files": "*.svelte", "options": { "parser": "svelte" } }]
