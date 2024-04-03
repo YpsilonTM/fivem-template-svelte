@@ -1,6 +1,9 @@
 local QBCore = exports['qb-core']:GetCoreObject()
+local netPrefix = GetCurrentResourceName() .. ':'
 
-QBCore.Functions.CreateCallback(GetCurrentResourceName() .. ':example', function(source, cb, data)
-    local result = IsPlayerAceAllowed(source, 'command')
-    cb(result)
+lib.callback.register(netPrefix .. 'Example', function()
+end)
+
+lib.addCommand('example', { restricted = 'group.admin' }, function()
+
 end)
