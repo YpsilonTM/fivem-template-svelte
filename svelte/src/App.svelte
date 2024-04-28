@@ -6,6 +6,6 @@
   <!-- content here -->
 </main>
 
-<style>
+<style lang="postcss">
   /* your style here */
 </style>
