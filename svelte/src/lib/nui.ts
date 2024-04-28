@@ -13,12 +13,12 @@ const dev = process.env.NODE_ENV === 'development'
  */
 
 const NUIRequest = async (eventname: string, data: any = {}) => {
-  try {
-    const response = await axios.post(`https://${resourceName}/${eventname}`, data)
-    return response.data
-  } catch (error) {
-    console.log(error)
-  }
+	try {
+		const response = await axios.post(`https://${resourceName}/${eventname}`, data)
+		return response.data
+	} catch (error) {
+		console.log(error)
+	}
 }
 
 /**
@@ -27,14 +27,14 @@ const NUIRequest = async (eventname: string, data: any = {}) => {
  * @param handler - The function to be called when the NUI action is received.
  */
 const NUIEvent = (actionName: string, handler: (data: any) => void) => {
-  const eventlistener = (event: MessageEvent) => {
-    const { action, data } = event.data
-    if (action === actionName) {
-      handler(data)
-    }
-  }
-  onMount(() => window.addEventListener('message', eventlistener))
-  onDestroy(() => window.removeEventListener('message', eventlistener))
+	const eventlistener = (event: MessageEvent) => {
+		const { action, data } = event.data
+		if (action === actionName) {
+			handler(data)
+		}
+	}
+	onMount(() => window.addEventListener('message', eventlistener))
+	onDestroy(() => window.removeEventListener('message', eventlistener))
 }
 
 /**
@@ -43,13 +43,13 @@ const NUIEvent = (actionName: string, handler: (data: any) => void) => {
  * @param handler - A function to be called when the specified keys are pressed.
  */
 const RegisterKeyMapping = (keys: string[], handler: (event: KeyboardEvent) => void) => {
-  const keylistener = (event: KeyboardEvent) => {
-    if (keys.includes(event.key)) {
-      handler(event)
-    }
-  }
-  onMount(() => window.addEventListener('keydown', keylistener))
-  onDestroy(() => window.removeEventListener('keydown', keylistener))
+	const keylistener = (event: KeyboardEvent) => {
+		if (keys.includes(event.key)) {
+			handler(event)
+		}
+	}
+	onMount(() => window.addEventListener('keydown', keylistener))
+	onDestroy(() => window.removeEventListener('keydown', keylistener))
 }
 
 export { NUIEvent, NUIRequest, RegisterKeyMapping, dev }

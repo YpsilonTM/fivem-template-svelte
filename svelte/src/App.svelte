@@ -1,11 +1,11 @@
 <script lang="ts">
-  // script here
+	// script here
 </script>
 
 <main>
-  <!-- content here -->
+	<!-- content here -->
 </main>
 
 <style lang="postcss">
-  /* your style here */
+	/* your style here */
 </style>
