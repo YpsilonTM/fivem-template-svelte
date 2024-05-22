@@ -2,8 +2,8 @@
 	// script here
 </script>
 
-<main>
-	<!-- content here -->
+<main class="container">
+	<h1 class="text-7xl uppercase font-bold text-center">New Awesome App!</h1>
 </main>
 
 <style lang="postcss">

@@ -1,6 +1,6 @@
 @echo off
 set source=%~dp0
-@REM for example, 'D:\Development\fivem\servername\server-data\resources\[custom]\appname\'
+@REM for example, 'D:\Development\fivem\servername\server-data\resources\[custom]\appname\' don't forget to remove the single quotes
 set destination=
 
 @echo building svelte
